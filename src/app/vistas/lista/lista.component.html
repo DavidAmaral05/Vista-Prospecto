@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container">
+    <div class="column mt-4">
+
+      <h3>Lista de Prospectos</h3><br>
+      <button type="button" class="btn btn-primary mt-2" style="float: left" (click)="capturarProspecto()">Capturar Nuevo</button>
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido Materno</th>
+                <th scope="col">Apellido Paterno</th>
+                <th scope="col">Estatus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prospecto of listadeProspectos" (click)="verProspecto(prospecto.idprospecto)">
+                <th scope="row">{{prospecto.idprospecto}}</th>
+                <td>{{prospecto.nombre}}</td>
+                <td>{{prospecto.apellidoMaterno}}</td>
+                <td>{{prospecto.apellidoPaterno}}</td>
+                <td>{{prospecto.estatus}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

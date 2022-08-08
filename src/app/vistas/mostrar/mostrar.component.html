@@ -1,0 +1,67 @@
+<app-header></app-header>
+<div class="container">
+    <form [formGroup]="DatosCapturados" (ngSubmit)="putForm(DatosCapturados.value)">
+        <h3><b>Datos del Prospecto</b></h3>
+        <div class="form-group row">
+             <div class="col">
+                 <label for="exampleFormControlInput"><b>Nombre:</b></label> 
+                <input type="text"  class="form-control" formControlName="nombre" readonly>
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Apellido Paterno:</b></label>
+                <input type="text"  class="form-control" formControlName="apellidoPaterno" readonly>
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Apellido Materno: (opcional)</b></label>
+                <input type="text"  class="form-control" formControlName="apellidoMaterno" readonly>
+             </div>
+        </div>
+        <br>
+
+        <div class="form-group row">
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Colonia:</b></label> 
+               <input type="text"  class="form-control" formControlName="colonia" readonly>
+           </div>
+           <div class="col">
+               <label for="exampleFormControlInput"><b>Calle:</b></label>
+               <input type="text"  class="form-control" formControlName="calle" readonly>
+           </div>
+           <div class="col">
+               <label for="exampleFormControlInput"><b>Número:</b></label>
+               <input type="text"  class="form-control" formControlName="numero" readonly>
+            </div>
+       </div>
+       <br>
+
+        <div class="form-group row">
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Telefono:</b></label> 
+                <input type="text"  class="form-control" formControlName="telefono" readonly>
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Codigo Postal:</b></label>
+                <input type="text"  class="form-control" formControlName="codigoPostal" readonly>
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput"><b>RFC:</b></label>
+                <input type="text"  class="form-control" formControlName="rfc" readonly>
+            </div>
+        </div>
+        <br>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="estatus" value="Autorizado" (change)="hideData()"><b>Autorizado</b> <br>
+            <input class="form-check-input" type="radio" formControlName="estatus" value="Rechazado" (change)="showData()"><b>Rechazado</b> <br>
+            <div *ngIf="element == true">
+            <label for="exampleFormControlInput"><b>Razón: (necesario)</b></label>
+            <input type="text" class="form-control" formControlName="observaciones">
+            </div>
+        </div>
+        <br>
+        
+        <button class="btn btn-danger mt-2" style="float: right" (click)="salir()">Salir</button>
+        <button type="submit" class="btn btn-primary mt-2" style="float: right" [disabled]="DatosCapturados.invalid">Enviar</button>
+
+    </form>
+</div>

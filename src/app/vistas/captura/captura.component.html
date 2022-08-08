@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="container">
+    <form [formGroup]="DatosCapturados" (ngSubmit)="postProspecto(DatosCapturados.value)">
+        <h3><b>Datos del Prospecto</b></h3>
+        <div class="form-group row">
+             <div class="col">
+                 <label for="exampleFormControlInput"><b>Nombre:</b></label> 
+                <input type="text" placeholder="Ingrese su Nombre"  class="form-control" formControlName="nombre">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Apellido Paterno:</b></label>
+                <input type="text" placeholder="Ingrese su Apellido Paterno" class="form-control" formControlName="apellidoPaterno">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Apellido Materno: (opcional)</b></label>
+                <input type="text" placeholder="Ingrese su Apellido Materno" class="form-control" formControlName="apellidoMaterno">
+             </div>
+        </div>
+        <br>
+
+        <div class="form-group row">
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Colonia:</b></label> 
+               <input type="text" placeholder="Ingrese la Colonia" class="form-control" formControlName="colonia">
+           </div>
+           <div class="col">
+               <label for="exampleFormControlInput"><b>Calle:</b></label>
+               <input type="text" placeholder="Ingrese la Calle" class="form-control" formControlName="calle">
+           </div>
+           <div class="col">
+               <label for="exampleFormControlInput"><b>Número:</b></label>
+               <input type="text" placeholder="Ingrese el Numero" class="form-control" formControlName="numero">
+            </div>
+       </div>
+       <br>
+
+        <div class="form-group row">
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Telefono:</b></label> 
+                <input type="text" placeholder="Ingrese el Telefono" class="form-control" formControlName="telefono">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Codigo Postal:</b></label>
+                <input type="text" placeholder="Ingrese el Codigo Postal" class="form-control" formControlName="codigoPostal">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput"><b>RFC:</b></label>
+                <input type="text" placeholder="Ingrese el RFC" class="form-control" formControlName="rfc">
+            </div>
+        </div>
+        <br>
+
+        <button class="btn btn-danger mt-2" style="float: right" (click)="salir()">Salir</button>
+        <button type="submit" class="btn btn-primary mt-2" style="float: right" [disabled]="DatosCapturados.invalid">Enviar</button>
+    </form>
+
+    <!-- <form [formGroup]="documentoCapturado">
+        <div class="form-group row">
+            <div class="col">
+                <label for="exampleFormControlInput"><b>Documentos:</b></label><br>
+                <label for="exampleFormControlInput">Foto:</label><br>
+                <input (change)="capturarFile($event)" type="file">
+            </div>
+            <div class="col">
+                <img [src]="archivos[0]">   
+            </div>
+        </div>
+    </form> -->
+
+</div>
